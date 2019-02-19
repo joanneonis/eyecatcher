@@ -159,8 +159,6 @@ var tensorflow = {
     model.detect(video).then(function (predictions) {
       _this3.renderPredictions(predictions);
 
-      _this3.prepareWords(predictions);
-
       requestAnimationFrame(function () {
         _this3.detectFrame(video, model);
       });
@@ -203,8 +201,7 @@ var tensorflow = {
     }
 
     ;
-  },
-  prepareWords: function prepareWords(predictions) {}
+  }
 };
 tensorflow.init();
 

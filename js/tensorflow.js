@@ -46,7 +46,6 @@ const tensorflow = {
   detectFrame(video, model) {
     model.detect(video).then(predictions => {
       this.renderPredictions(predictions);
-      this.prepareWords(predictions);
   
       requestAnimationFrame(() => {
         this.detectFrame(video, model);
