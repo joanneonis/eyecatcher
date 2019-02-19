@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Speech test</title>
+	<script src="node_modules/artyom.js/build/artyom.window.min.js"></script>
+	<script src="node_modules/@tensorflow/tfjs/dist/tf.min.js"> </script> 
+	<script src="node_modules/@tensorflow-models/coco-ssd/dist/coco-ssd.min.js"> </script> 
+
+	<style>
+		.size {
+			position: fixed;
+			top: 0;
+			left: 0;
+		}
+
+	</style>
+</head>
+<body>
+	<button id="btn">test</button>
+
+	<div>
+			<video
+				class="size"
+				autoPlay
+				playsInline
+				muted
+				id="videoRef"
+				width="600"
+				height="500"
+			></video>
+			<canvas
+				class="size"
+				id="canvasRef"
+				width="600"
+				height="500"
+			></canvas>
+
+		</div>
+
+
+	<!-- <script src="build/main.bundle.js"></script> -->
+
+	<script src="js/tf.js" type="module"></script>
+
+	<!-- <script src="artyom.js"></script> -->
+</body>
+</html>
