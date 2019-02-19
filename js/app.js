@@ -1,3 +1,4 @@
 
 import '@babel/polyfill';
-import './tensorflow'; 
+// import './tensorflow'; 
+import './posenet';
