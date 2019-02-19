@@ -5,7 +5,6 @@
 const videoRef = document.getElementById("videoRef");
 const canvasRef = document.getElementById("canvasRef");
 let biggestFish;
-let allTheFish = [];
 
 const tensorflow = {
   init() {
@@ -66,41 +65,40 @@ const tensorflow = {
     ctx.font = font;
     ctx.textBaseline = "top";
 
-    predictions.forEach(prediction => {
-      let big = false;
-      const x = prediction.bbox[0];
-      const y = prediction.bbox[1];
-      const width = prediction.bbox[2];
-      const height = prediction.bbox[3];
+
+    const testArray = [];
+
+    for (let i = 0; i < predictions.length; i++) {
+    // predictions.forEach(prediction => {
+
+      const x = predictions[i].bbox[0];
+      const y = predictions[i].bbox[1];
+      const width = predictions[i].bbox[2];
+      const height = predictions[i].bbox[3];
       const size = width + height;
 
-      // only keeps track of the biggest one yet. 
-      // TODO length of predictions meenemen
-      if (biggestFish === undefined || biggestFish === null) {
-        biggestFish = {...prediction, size: size};
-        big = true;
-      } else if (size > biggestFish.size) {
-        biggestFish = {...prediction, size: size};
-        big = true;
-      } else {
-        big = false;
-      }
-  
+      testArray.push(size);
+
+      const biggest = Math.max.apply(Math, testArray);
+      // console.log(testArray, "the winner is" ,biggest);
+
+      const biggestIndex = testArray.indexOf(biggest);
+
       // bounding box.
-      ctx.strokeStyle = big ? "#ffa500" : "#00FFFF";
+      ctx.strokeStyle = i === biggestIndex ? "#ffa500" : "#00FFFF";
       ctx.lineWidth = 4;
       ctx.strokeRect(x, y, width, height);
   
       // label
-      ctx.fillStyle = big ? "#ffa500" : "#00FFFF";
-      const textWidth = ctx.measureText(prediction.class).width;
+      ctx.fillStyle = i === biggestIndex ? "#ffa500" : "#00FFFF";
+      const textWidth = ctx.measureText(predictions[i].class).width;
       const textHeight = parseInt(font, 10); 
       ctx.fillRect(x, y, textWidth + 4, textHeight + 4);
 
       // Draw the text last to ensure it's on top.
       ctx.fillStyle = "#000000";
-      ctx.fillText(prediction.class + prediction.score, x, y);
-    });
+      ctx.fillText(predictions[i].class + predictions[i].score, x, y);
+    };
   },
 
   prepareWords(predictions) {
