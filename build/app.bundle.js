@@ -184,15 +184,16 @@ var tensorflow = {
       var height = predictions[i].bbox[3];
       var size = width + height;
       testArray.push(size);
-      var biggest = Math.max.apply(Math, testArray); // console.log(testArray, "the winner is" ,biggest);
+      var biggest = Math.max.apply(Math, testArray);
+      var biggestIndex = testArray.indexOf(biggest);
+      var focus = i === biggestIndex && biggest > 500; // console.log(testArray, "the winner is" ,biggest);
+      // bounding box.
 
-      var biggestIndex = testArray.indexOf(biggest); // bounding box.
-
-      ctx.strokeStyle = i === biggestIndex ? "#ffa500" : "#00FFFF";
+      ctx.strokeStyle = focus ? "#ffa500" : "#00FFFF";
       ctx.lineWidth = 4;
       ctx.strokeRect(x, y, width, height); // label
 
-      ctx.fillStyle = i === biggestIndex ? "#ffa500" : "#00FFFF";
+      ctx.fillStyle = focus ? "#ffa500" : "#00FFFF";
       var textWidth = ctx.measureText(predictions[i].class).width;
       var textHeight = parseInt(font, 10);
       ctx.fillRect(x, y, textWidth + 4, textHeight + 4); // Draw the text last to ensure it's on top.

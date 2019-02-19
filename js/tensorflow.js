@@ -80,17 +80,18 @@ const tensorflow = {
       testArray.push(size);
 
       const biggest = Math.max.apply(Math, testArray);
+      const biggestIndex = testArray.indexOf(biggest);
+      const focus = i === biggestIndex && biggest > 500;
+
       // console.log(testArray, "the winner is" ,biggest);
 
-      const biggestIndex = testArray.indexOf(biggest);
-
       // bounding box.
-      ctx.strokeStyle = i === biggestIndex ? "#ffa500" : "#00FFFF";
+      ctx.strokeStyle = focus ? "#ffa500" : "#00FFFF";
       ctx.lineWidth = 4;
       ctx.strokeRect(x, y, width, height);
   
       // label
-      ctx.fillStyle = i === biggestIndex ? "#ffa500" : "#00FFFF";
+      ctx.fillStyle = focus ? "#ffa500" : "#00FFFF";
       const textWidth = ctx.measureText(predictions[i].class).width;
       const textHeight = parseInt(font, 10); 
       ctx.fillRect(x, y, textWidth + 4, textHeight + 4);
@@ -100,10 +101,6 @@ const tensorflow = {
       ctx.fillText(predictions[i].class + predictions[i].score, x, y);
     };
   },
-
-  prepareWords(predictions) {
-
-  }
 };
 
 tensorflow.init();
