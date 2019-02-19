@@ -11,10 +11,10 @@ const posenetTest = {
   init() {
     document.addEventListener('DOMContentLoaded', () => {
 			// this.webcam();
-			this.poseImageTest();
+			this.poseImageTest(); 
 		});
 	},
-	poseImageTest() {
+	async poseImageTest() {
 		const imageScaleFactor = 0.50;
 		const flipHorizontal = false;
 		const outputStride = 16;
@@ -24,14 +24,23 @@ const posenetTest = {
 		const scoreThreshold = 0.5;
 		// minimum distance in pixels between the root parts of poses
 		const nmsRadius = 20;
-		const imageElement = document.getElementById('cat');
+		const imageElement = document.getElementById('testimgg');
 		// load posenet
-		const net = await posenet.load();
-		const poses = await net.estimateMultiplePoses(
-			imageElement, imageScaleFactor, flipHorizontal, outputStride,    
-			maxPoseDetections, scoreThreshold, nmsRadius);
+    const net = posenet.load();
+    
+    net.then((test)=> {
+      console.log(test);
 
-		console.log("test", poses);
+      const poses = test.estimateMultiplePoses(
+        imageElement, imageScaleFactor, flipHorizontal, outputStride,    
+        maxPoseDetections, scoreThreshold, nmsRadius);
+
+        console.log("test", poses);
+
+        poses.then((pose) => {
+          console.log("what you see",);
+        });
+    });
 	},
   webcam() {
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
