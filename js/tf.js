@@ -1,14 +1,3 @@
-const artyom = new Artyom();
-
-artyom.initialize({
-	continuous:true,
-	lang:"nl-NL",
-	executionKeyword: "and do it now",
-	listen:true,
-	debug:true
-});
-
-
 (function() {
 const videoRef = document.getElementById("videoRef");
 const canvasRef = document.getElementById("canvasRef");
@@ -95,16 +84,5 @@ let arrayLengthHistory;
 
 function prepareWords(predictions) {
 	console.log(predictions, predictions.length);
-}
-
-function sayWord(word) {
-	artyom.say(word,{
-		onStart:function(){
-				console.log("Start tekst voorlezen");
-		},
-		onEnd:function(){
-				console.log("Tekst gelezen!");
-		}
-	});
 }
 })();
