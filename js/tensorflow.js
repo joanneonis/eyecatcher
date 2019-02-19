@@ -5,6 +5,7 @@
 const videoRef = document.getElementById("videoRef");
 const canvasRef = document.getElementById("canvasRef");
 let biggestFish;
+let allTheFish = [];
 
 const tensorflow = {
   init() {
@@ -56,6 +57,7 @@ const tensorflow = {
 
   renderPredictions(predictions) {
     biggestFish = null;
+    
     const ctx = canvasRef.getContext("2d");
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
   
@@ -63,7 +65,7 @@ const tensorflow = {
     const font = "16px sans-serif";
     ctx.font = font;
     ctx.textBaseline = "top";
-  
+
     predictions.forEach(prediction => {
       let big = false;
       const x = prediction.bbox[0];
@@ -72,9 +74,8 @@ const tensorflow = {
       const height = prediction.bbox[3];
       const size = width + height;
 
-
       // only keeps track of the biggest one yet. 
-      // TODO empty bigfish?
+      // TODO length of predictions meenemen
       if (biggestFish === undefined || biggestFish === null) {
         biggestFish = {...prediction, size: size};
         big = true;
@@ -100,8 +101,6 @@ const tensorflow = {
       ctx.fillStyle = "#000000";
       ctx.fillText(prediction.class + prediction.score, x, y);
     });
-
-    console.log(biggestFish);
   },
 
   prepareWords(predictions) {
