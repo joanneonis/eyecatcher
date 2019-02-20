@@ -116,6 +116,7 @@ __webpack_require__.r(__webpack_exports__);
  */
 var videoRef = document.getElementById("videoRef");
 var canvasRef = document.getElementById("canvasRef");
+var servo = document.getElementById("servo-wheel");
 var biggestFish;
 var tensorflow = {
   init: function init() {
@@ -197,7 +198,11 @@ var tensorflow = {
       ctx.fillRect(x, y, textWidth + 4, textHeight + 4); // Draw the text last to ensure it's on top.
 
       ctx.fillStyle = "#000000";
-      ctx.fillText(predictions[i].class + predictions[i].score, x, y);
+      ctx.fillText(predictions[i].class + "score:" + Math.round(predictions[i].score * 100) + "%", x, y); //predictions[i].class + predictions[i].score // devide 5 because its 500px width
+
+      if (focus) {
+        servo.style.webkitTransform = "rotate(" + x + "deg)";
+      }
     }
 
     ;

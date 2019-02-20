@@ -1,0 +1,21 @@
+.servo {
+	width: 50vw;
+	float: right;
+}
+
+svg {
+	width: 100%;
+	height: auto;
+}
+
+/* 
+@keyframes rotateServo {
+	from {transform: rotate(0deg);}
+	to {transform: rotate(360deg);}
+} */
+
+
+#servo-wheel {
+	animation: rotateServo 1s infinite linear;
+	transform-origin: 32.1% 41%;
+}

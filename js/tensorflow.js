@@ -4,6 +4,7 @@
 
 const videoRef = document.getElementById("videoRef");
 const canvasRef = document.getElementById("canvasRef");
+const servo = document.getElementById("servo-wheel");
 let biggestFish;
 
 const tensorflow = {
@@ -97,9 +98,15 @@ const tensorflow = {
 
       // Draw the text last to ensure it's on top.
       ctx.fillStyle = "#000000";
-      ctx.fillText(predictions[i].class + predictions[i].score, x, y);
+      ctx.fillText(predictions[i].class + "score:" + Math.round((predictions[i].score)*100) + "%" , x, y); //predictions[i].class + predictions[i].score // devide 5 because its 500px width
+    
+      if (focus) {
+        servo.style.webkitTransform = "rotate("+x+"deg)";
+      }
     };
   },
 };
 
 tensorflow.init();
+
+
