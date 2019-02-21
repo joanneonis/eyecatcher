@@ -19,3 +19,12 @@ svg {
 	animation: rotateServo 1s infinite linear;
 	transform-origin: 32.1% 41%;
 }
+
+.speech-log {
+	position: fixed;
+	bottom: 0;
+	height: 20vh;
+	font-size: 2em;
+	overflow: auto;
+	width: 100%;
+}

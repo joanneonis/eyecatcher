@@ -16,10 +16,21 @@
 			top: 0;
 			left: 0;
 		}
+
+		.tools {
+			position: fixed;
+			top: 50px;
+			right: 50px;
+			z-index: 20;
+		}
 	</style>
 </head>
 <body>
-	<button id="btn">test</button>
+	<div class="tools">
+		<button id="sayword">test</button>
+		<button id="start">start</button>
+		<button id="stop">stop</button>
+	</div>
 	<div>
 			<video
 				class="size"
@@ -98,6 +109,11 @@
 				</g>
 				</svg>
 	 
+		</div>
+
+		<div class="speech-log">
+			<ul id="speech-log__inner">
+			</ul>
 		</div>
 
 	<script src="build/app.bundle.js" type="module"></script>
