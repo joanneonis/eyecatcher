@@ -7,6 +7,9 @@ const config = {
 	messagingSenderId: "929902011942"
 };
 
+let db;
+let firebase;
+
 requirejs.config({
 	paths: {
 		'@firebase/app': 'https://www.gstatic.com/firebasejs/5.8.4/firebase-app',
@@ -14,8 +17,6 @@ requirejs.config({
 	}
 });
 
-let db;
-let firebase;
 
 require([
 	'@firebase/app',
