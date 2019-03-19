@@ -1,5 +1,5 @@
 const loremArray = [
-	"in",
+	"pietertje",
 	"anim",
 	"ex",
 	"veniam",

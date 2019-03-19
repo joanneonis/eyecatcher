@@ -22,32 +22,30 @@
 // 	requestAnimationFrame(performAnimation);
 // });
 
-let indexLetter = 0;
-let indexWord = 1;
+let indexWord = 0;
+let i = 0;
 
 document.addEventListener("DOMContentLoaded", () => {
 	const textPath = document.querySelector('#textPath');
 	const textContent = document.querySelector('#textContent');
-	
+
 	window.setInterval(function(){
-		// var textnode = document.createTextNode(`${loremArray[indexWord]} `);
-		// textContent.prepend(textnode);
-
-		// textContent.prepend(`${loremArray[indexWord]} `);
-
-		console.log(loremArray[1].length);
-
 		const letters = loremArray[indexWord].split('');
 
-		for(let i = 0; i < loremArray[indexWord].length; i++) {
-			setTimeout(function(){
-				textContent.append(letters[i])
-			}, 500);
+		if (i < letters.length) {
+			textContent.append(letters[i]);
+		} else {
+			textContent.append(' ');
+			indexWord ++;
+			i = -1;
 		}
+		i++;
 
-		textContent.append(' ')
-		indexWord ++;
-	}, 2000);
+		if(textContent.textContent.length > 43) {  // 43
+			textContent.textContent = textContent.textContent.substr(1);
+		}
+	}, 100);
+
 });
 
 
