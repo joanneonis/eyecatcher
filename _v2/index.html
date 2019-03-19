@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Speech Recognition</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+		<button class="btn">Start met opnemen</button>
+
+
+    <div>
+			<h2>Zin berekend</h2>
+			<div class="text-box" contenteditable="true">....</div> 
+		</div>		
+
+		<br>
+		<ul class="all-text"></ul>
+	</div>
+	<div class="container">
+		<h2>TF-IDF</h2>
+		<ul class="keywords">
+
+		</ul>
+	</div>
+	<div class="original" id="inputText">
+			Erik Pinksterblom ligt op een avond in zijn bed. Hij heeft de volgende dag een toets en heeft alles uit zijn hoofd geleerd over insecten. Daar heeft hij het boek 'Solms beknopte natuurlijke historie' voor gebruikt. 
+
+			Hij heeft het gevoel dat er iets bijzonders gaat gebeuren en opeens ziet hij dat het schilderij van zijn overgrootvader geen gewoon schilderij is. Alle personen in de schilderijen op zijn kamer beginnen te leven. Ze praten met hem en met elkaar. 
+			
+			Dan zegt Erik dat hij wel zou willen weten wat er in Wollewei gebeurt. Het is het schilderij dat naast zijn bed hangt en hij zelf zo genoemd heeft. Opeens wordt hij zó klein dat hij in het schilderij kan stappen. Daar wordt hij nog veel kleiner, kleiner dan menig insect. 
+			
+			Het eerste dier dat hij ontmoet is een wesp, waarvan hij de naam niet kan uitspreken (weps). Deze neemt hem mee naar zijn huis en familie en Erik mag daar eten. De wespen maken hem duidelijk dat het erg belangrijk is van adel te zijn en een angel te hebben. Helaas kiest Erik ervoor een gedicht voor te dragen over 'de nijvere bij' (waar wespen erg op neerkijken) en bespeelt hij een bromvlieg zo driftig, tijdens het muziekuurtje van de familie, dat de vlieg overlijdt. Daarmee verliest hij zijn aanzien en trekt verder. 
+			
+			Hij vliegt op de rug van een hommel, die zelf zegt filosoof te zijn, naar een hotel. Het hotel is een groot oud slakkenhuis en er wonen veel verschillende dieren. De eigenaar is een slak. De dieren hebben veel interesse voor hem en komen erachter dat Erik veel van hen af weet. Dit heeft hij natuurlijk allemaal geleerd uit 'Solms' boek. Het gaat zelfs zo ver dat de dieren aan Erik gaan vragen wat ze moeten doen, waarop hij antwoord dat ze moeten vertrouwen op hun instinct. Gewoon doen wat ze altijd hebben gedaan. Na een tijd daar gewoond te hebben vertrekt Erik op de rug van een pas ontpopte vlinder weer de weide wereld in.
+			
+			Helaas wordt die vlinder verliefd en trouwt, na het voordragen van een gedicht dat hij samen met Erik gemaakt heeft, met een vlindervrouwtje. Erik staat weer alleen. 
+			
+			Hij loopt alleen verder en gebruikt een dennennaald als wapen, want de insecten zijn niet zo aardig meer tegen hem. Hij heeft zijn wapen hard nodig als hij een zwarte weduwe tegenkomt en haar web kapotmaakt. Gelukkig herkent hij de manier waarop zij aanvalt en steekt de dennennaald in haar lijf. Erik overleeft het en de spin niet. 			
+	</div>
+	<script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
+	<!-- <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-firestore.js"></script> -->
+	<script src="firebase.js"></script>
+	<script src="filter-stupid.js"></script>
+	<script src="tfidf.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
+
+<!-- https://shiffman.net/a2z/text-analysis/ -->
+<!-- https://github.com/shiffman/A2Z-F17/blob/master/week5-analysis/03_tf-idf/sketch.js -->
