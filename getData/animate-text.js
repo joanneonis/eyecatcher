@@ -44,16 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
 		if(textContent.textContent.length > 43) {  // 43
 			textContent.textContent = textContent.textContent.substr(1);
 		}
-	}, 100);
+	}, 200);
 
 });
-
-
-
-
-
-// const letters = loremArray[indexWord].split('');
-
-// letters.forEach(letter => {
-// 	textContent.append(letter); 
-// });
