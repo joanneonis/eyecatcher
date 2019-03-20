@@ -74,6 +74,6 @@ const getTime = () => {
 const addToHistory = (text) => {
   var node = document.createElement("LI");
   var textnode = document.createTextNode(text);
-  node.prepend(textnode);
-  history.prepend(node);
+  // node.prepend(textnode);
+  // history.prepend(node);
 };
