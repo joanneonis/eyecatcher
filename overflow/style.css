@@ -1,0 +1,35 @@
+body, html {
+	margin: 0;
+}
+
+svg {
+	height: 200vh;
+	margin: auto;
+	width: auto;
+	display: block;
+}
+.bottom {
+	margin-top: -100vh;
+}
+
+.dotted-line {
+	stroke: #FF470A;
+	stroke-width: 80px;
+	stroke-linejoin: round;
+	stroke-dasharray: 320;
+	stroke-dashoffset: 277;
+	stroke-linecap: square;
+	animation: dash 500s linear infinite;
+	fill: transparent;
+}
+
+.st7 {
+	stroke-dasharray: 13;
+	animation: dash 500s linear infinite;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 100000;
+  }
+}

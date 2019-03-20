@@ -4,8 +4,8 @@ const synth = window.speechSynthesis;
 const recognition = new SpeechRecognition();
 
 const startBtn = document.querySelector('.btn')
-let container = document.querySelector('.text-box');
-let history = document.querySelector('.all-text');
+// let container = document.querySelector('.text-box');
+// let history = document.querySelector('.all-text');
 
 startBtn.addEventListener('click', () => {
   dictate();
@@ -24,7 +24,7 @@ const dictate = () => {
 
     updateData('words', 'recognition', [{ calculatedText: speechToText }]);
 
-    container.textContent = speechToText;
+    // container.textContent = speechToText;
 
     let historyText = event.results[currentPos][0].confidence + event.results[currentPos][0].transcript;
     addToHistory(historyText);
