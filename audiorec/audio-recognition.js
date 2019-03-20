@@ -4,8 +4,8 @@ const synth = window.speechSynthesis;
 const recognition = new SpeechRecognition();
 
 const startBtn = document.querySelector('.btn')
-// let container = document.querySelector('.text-box');
-// let history = document.querySelector('.all-text');
+let container = document.querySelector('.text-box');
+let history = document.querySelector('.all-text');
 
 startBtn.addEventListener('click', () => {
   dictate();
@@ -15,16 +15,19 @@ let calculatedText = [];
 let streamData = [];
 
 const dictate = () => {
+  console.log('help');
   recognition.continuous = true;
   recognition.interimResults = true; //! supercool
   recognition.start();
   recognition.onresult = (event) => {
+    console.log('result');
+
     let currentPos = event.results.length - 1;
     const speechToText = event.results[currentPos][0].transcript;
 
     updateData('words', 'recognition', [{ calculatedText: speechToText }]);
 
-    // container.textContent = speechToText;
+    container.textContent = speechToText;
 
     let historyText = event.results[currentPos][0].confidence + event.results[currentPos][0].transcript;
     addToHistory(historyText);
@@ -74,6 +77,6 @@ const getTime = () => {
 const addToHistory = (text) => {
   var node = document.createElement("LI");
   var textnode = document.createTextNode(text);
-  // node.prepend(textnode);
-  // history.prepend(node);
+  node.prepend(textnode);
+  history.prepend(node);
 };
