@@ -13,7 +13,7 @@ const mensen = ['zij', 'haar', 'hij', 'hem', 'hen', 'hun', 'ik', 'mijn', 'ze', '
 const voorzetsels = ['voor', 'achter', 'onder', 'boven', 'rechts', 'links', 'op', 'erachter', 'onder', 'aan', 'over', 'in', 'uit'];
 const koppelwoorden = ['en', 'anders', 'middels', 'met', 'dan', 'vervolgens', 'allemaal', 'volgende', 'gebeuren', 'gebeurd', 'gebeurde'];
 const reizen = ['tot', 'naar', 'van', 'er', 'kan', 'kunnen', 'kun'];
-const staat = ['wel', 'niet', 'misschien', 'ja', 'nee'];
+const staat = ['wel', 'niet', 'misschien', 'ja', 'nee', 'hoe', 'jouw'];
 
 const allStupid = [...lidwoorden, ...aanwijs, ...zijn, ...mensen, ...voorzetsels, ...koppelwoorden, ...reizen, ...staat];
 

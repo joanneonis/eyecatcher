@@ -31,16 +31,18 @@ const dictate = () => {
     const speechToText = event.results[currentPos][0].transcript;
     const isTextFinal = event.results[currentPos].isFinal;
 
-    container.textContent = speechToText;
+    // updateData('words', 'recognition', [{ calculatedText: speechToText }]);
 
-    let historyText = event.results[currentPos][0].transcript;
+    container.textContent = speechToText;
+    // addNode(speechToText);
+
+    let historyText = event.results[currentPos][0].transcript; // event.results[currentPos][0].confidence + 
     addToHistory(historyText);
-    createDbHistory(historyText);
 
     streamData.push({confidence: event.results[currentPos][0].confidence, transcript: event.results[currentPos][0].transcript});
+    // updateData('words', 'recognition', [{ stream: streamData }]);
 
     if (event.results[0].isFinal) {
-      console.log('last but not least, calculated sentence:', event.results[0].transcript);
       // todo split into words 
       calculatedWordsArray.push(speechToText);
 
@@ -53,10 +55,9 @@ const dictate = () => {
 
   window.setInterval(function(){
     addLine();
-    processTheRightText();
+    pushHistoryfb();
   }, 5000);
 
-  // keep track of the events!
   recognition.onend = function() {
     console.log('Speech recognition service disconnected');
   }
@@ -79,47 +80,19 @@ const addLine = () => {
   }
   
   lastEventTriggered = "addLine";
+  // console.log("addLine");
   timeIndex ++;
 }
 
+let newestArray;
 const addToHistory = (text) => {
   var node = document.createElement("SPAN");
   var textnode = document.createTextNode(text);
   node.prepend(textnode);
   history.prepend(node);
-}
 
-// !estje met unieke woorden doet het niet
-function unique(old, newArray) {
-  // return a.filter(word => (b.indexOf(word) === -1))
-  // return a.filter(word => !arr.includes(word));
-  
-  // let unique = {};
-  // names.forEach(function(i) {
-  //   if(!unique[i]) {
-  //     unique[i] = true;
-  //   }
-  // });
-
-  let cleanNew;
-
-  old.forEach((word) => {
-    const index = newArray.indexOf(word);
-
-    if (index === -1) {
-      newArray.splice(index, 1);
-    }
-  });
-
-  return newArray;
-
-  // return Object.keys(unique);
-  // return newArray;
-}
-
-
-function createDbHistory(text) {
   lastEventTriggered = "addToHistory";
+  // console.log("addToHistory");
 
   index = timeIndex.toString();
 
@@ -127,67 +100,26 @@ function createDbHistory(text) {
     historyToAnalyse[index] = [];
   }
   
+  // console.log("hier", historyToAnalyse[index], "tese", text);
   historyToAnalyse[index] = [...historyToAnalyse[index], text.toString()];
   
   if (historyToAnalyse) {
-    // db
-    // .collection("demo2")
-    // .doc("speechInput")
-    // .set(historyToAnalyse)
-    //   .then(() => {
-    //     // console.log("added new array");
-    //   }).catch((error) => {
-    //     console.log('oh nee!', error);
-    //   });
-
-      // console.log(typeof historyToAnalyse[index], historyToAnalyse[index]);
-
-      // if (typeof text !== "object") { returnText = text.split(/\W+/); }
-      // if (typeof text === "object") { Object.keys(text).map((objectKey, index) => { var value = text[objectKey]; console.log(value); }); }
-    
-      // Object.keys(text).map((objectKey, index) => { 
-      //   let value = text[objectKey]; console.log(value); 
-      //   process(value);
-      // });
+    // setData("demo2", "speechInput", historyToAnalyse);
+    newestArray = historyToAnalyse;
   }
 }
+ 
 
-function toFirebase(input) {
+function pushHistoryfb() {
+  console.log(newestArray);
+
   db
   .collection("demo2")
   .doc("speechInput")
-  .set(input)
-    .then(() => {
-      // console.log("added new array");
+  .set(newestArray)
+    .then(function () {
+      // console.log("Document successfully written!");
     }).catch((error) => {
       console.log('oh nee!', error);
     });
-}
- 
-let prevCalculated;
-function processTheRightText() {
-  let sendTofirebase;
-  if (index || index >= 0) {
-    // console.log(process(historyToAnalyse[index].join()));
-
-    // if (index > 0) {
-    //   let toAnalyse = unique(prevCalculated, historyToAnalyse[index]);
-    //   console.log(historyToAnalyse[index], prevCalculated, toAnalyse);
-    //   // console.log(process(toAnalyse.join()));
-    // } else {
-    //   console.log(process(historyToAnalyse[index].join()));
-    // }
-
-    prevCalculated = process(historyToAnalyse[index].join());
-    sendTofirebase = process(historyToAnalyse[index].join());
-    toFirebase(sendTofirebase);
-  }
-  // !toFirebase(input);
-  // index = timeIndex.toString();
-
-  // if (!historyToAnalyse[index]) {
-  //   historyToAnalyse[index] = [];
-  // }
-  
-  // historyToAnalyse[index] = [...historyToAnalyse[index], text.toString()];
 }
