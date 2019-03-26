@@ -76,12 +76,23 @@ function getData(collection, doc, i) {
 	});
 }
 
+let appState = false;
+
+function getState(collection, doc) {
+	db.collection(collection).doc(doc).onSnapshot((docData) => {
+		let data = docData.data();
+
+		appState = data.running;
+	});
+}
+
 
 function initApp() {
 	getData('demo2','speechInput', 0);
 	getData('demo1','speechInput', 1);
-}
 
+	getState('appSettings','state');
+}
 // // testverhaal to analyse
 // function test() {
 // 	db.collection("words").doc("story")
