@@ -11,13 +11,13 @@
 <g id="visual_1_">
 	<path class="st0" d="M102.5,0.5c0,0,0,314,249,314C575.5,314.5,571,534,571,534v233.5"/>
 </g>
-<path id="SVGID_x5F_1_x5F__1_" class="st1" d="M87.5,2.5c0,0,7.5,322,263,322C568,324.5,556,536,556,536v237"/>
+<path id="SVGID_x5F_1_x5F__1_" class="st1" d="M87.5,2.5c0,0,7.5,322,263,322C568,324.5,556,536,556,536v555.2"/>
 <text><textPath  xlink:href="#SVGID_x5F_1_x5F__1_" startOffset="4.126%">
 <tspan  style="font-family:'PTMono-Regular'; font-size:34px;">Lorem ipsum dolor sit amet, consesdf skd ctetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo </tspan></textPath>
 </text>
 <line class="st3" x1="1021.6" y1="116.2" x2="1021.6" y2="769.5"/>
-<path id="SVGID_x5F_2_x5F_" class="st1" d="M1013.6,116.2v653.3"/>
-<text><textPath  xlink:href="#SVGID_x5F_2_x5F_" startOffset="0.5249%">
+<path id="SVGID_x5F_2_x5F_" class="st1" d="M1013.6,116.2v280.2v704.4"/>
+<text><textPath  xlink:href="#SVGID_x5F_2_x5F_" startOffset="0.2625%">
 <tspan  style="font-family:'PTMono-Regular'; font-size:34px;">Lorem ipssdfsaum dolor sit amet, </tspan></textPath>
 </text>
 </svg>

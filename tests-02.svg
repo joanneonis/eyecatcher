@@ -9,8 +9,8 @@
 	.st3{fill:none;stroke:#DEFF79;stroke-width:90;stroke-linecap:round;stroke-miterlimit:10;}
 </style>
 <path class="st1" d="M570.7,1.7c0,0,1.8,236.5-172.9,236.5S233.8,402.2,233.8,402.2"/>
-<path id="SVGID_x5F_1_x5F_" class="st2" d="M557.7-0.3c0,0,2.8,236.5-171.9,236.5S221.8,400.2,221.8,400.2"/>
-<text><textPath  xlink:href="#SVGID_x5F_1_x5F_" startOffset="0.4639%">
+<path id="SVGID_x5F_1_x5F_" class="st2" d="M557-101.8l0.8,82.5l-0.1,19c0,0,2.8,236.5-171.9,236.5S221.8,400.2,221.8,400.2v126"/>
+<text><textPath  xlink:href="#SVGID_x5F_1_x5F_" startOffset="0.1855%">
 <tspan  style="font-family:'PTMono-Regular'; font-size:34px;">Lorem ipsum ddssit amet, sdf</tspan></textPath>
 </text>
 <path class="st3" d="M999,1.6c0,0-17,214.9,107.5,214.9"/>

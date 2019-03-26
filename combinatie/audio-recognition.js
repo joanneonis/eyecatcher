@@ -20,6 +20,8 @@ let historyToAnalyse = {};
 let lastEventTriggered = "";
 let timeIndex = 0;
 
+let calculatedWordsArray = [];
+
 const dictate = () => {
   recognition.continuous = true;
   recognition.interimResults = true;  //? supercool
@@ -28,8 +30,6 @@ const dictate = () => {
     let currentPos = event.results.length - 1;
     const speechToText = event.results[currentPos][0].transcript;
     const isTextFinal = event.results[currentPos].isFinal;
-
-    console.log(isTextFinal);
 
     // updateData('words', 'recognition', [{ calculatedText: speechToText }]);
 
@@ -43,6 +43,9 @@ const dictate = () => {
     // updateData('words', 'recognition', [{ stream: streamData }]);
 
     if (event.results[0].isFinal) {
+      // todo split into words 
+      calculatedWordsArray.push(speechToText);
+
       if (speechToText.includes('test')) {
           // speak(getTime);
           console.log('je zei test!!!');
