@@ -1,5 +1,6 @@
-let indexWord = 0;
-let i = 0;
+let word = [0, 0];
+let count = [0, 0];
+
 
 document.addEventListener("DOMContentLoaded", () => {
 	const textPath = document.querySelector('#textPath');
@@ -9,30 +10,42 @@ document.addEventListener("DOMContentLoaded", () => {
 	const textContent2 = document.querySelector('#textContent2');
 
 	window.setInterval(function(){
-		// console.log(calculatedWordsArray); 
-		if (collectedData.length === indexWord) { return; }
-		let letters = collectedData[indexWord].split('');
-		letters.reverse();
-
-		console.log(collectedData.length === indexWord);
-
-		if(textContent.textContent.length > 50) {  // 43 fit in tube
-			//? if prepend last character should be removed & also letters.reverse() should be there
-			textContent.textContent = textContent.textContent.substring(0, textContent.textContent.length-1);
-		}
-
-		if (i < letters.length) {
-			textContent.prepend(letters[i]);
-		} else {
-			textContent.prepend(' ');
-			indexWord ++;
-			i = -1;
-		}
-		i++;
-
-		if(textContent.textContent.length > 43) {  // 43 fit in tube, 
-			//? if append first item should be removed
-			// textContent.textContent = textContent.textContent.substr(1);
-		}
+		tube(textContent, collectedData[0], 0);
+		tube(textContent2, collectedData[1], 1);
+		// tube(textContent2, collectedData, indexWord2, j);
 	}, 200);
 });
+
+function tube(dom, arr, i) {
+	let letters = [];
+	// console.log(calculatedWordsArray); 
+	if (arr.length === word[i]) { 
+		if (dom.textContent.length < 90) { dom.prepend("\u00A0");  }
+		
+		return;
+	} 
+
+	if (arr === 0) { return }
+
+	letters = arr[word[i]].split('');
+	letters.reverse();
+
+	if(dom.textContent.length > 50) {  // 43 fit in tube
+		//? if prepend last character should be removed & also letters.reverse() should be there
+		dom.textContent = dom.textContent.substring(0, dom.textContent.length-1);
+	}
+
+	if (count[i] < letters.length) {
+		dom.prepend(letters[count[i]]);
+	} else {
+		dom.prepend(' ');
+		word[i] ++;
+		count[i]= -1;
+	}
+	count[i]++;
+
+	if(dom.textContent.length > 43) {  // 43 fit in tube, 
+		//? if append first item should be removed
+		// textContent.textContent = textContent.textContent.substr(1);
+	}
+}

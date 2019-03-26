@@ -62,7 +62,7 @@ let sessionId = 0;
 function pushHistoryfb(e) {
   let name = sessionId.toString();
   db
-  .collection("demo2")
+  .collection("demo1")
   .doc("speechInput")
   .update({ [name] : e})
     .then(function () {

@@ -31,7 +31,7 @@ require([
 });
 
 function cleanData() {
-	setData('words', 'recognition', [{stream: null, calculatedText: null}]);
+	setData('demo2', 'speechInput', [{}]);
 }
 
 function setData(collection, doc, data) {
@@ -58,59 +58,18 @@ function updateData(collection, doc, data) {
 		});
 }
 
-let collectedData = [0, 0];
-let got = [0, 0];
+let collectedData = [];
 
-function getData(collection, doc, i) {
+function getData(collection, doc) {
 	db.collection(collection).doc(doc).onSnapshot((docData) => {
 		let data = docData.data();
+		// collectedData[collection] = [...data, ...collectedData];
 
-		if (collectedData[i] != 0) {
-			collectedData[i] = [...collectedData[i], ...data[got[i]]];
-		} else {
-			collectedData[i] = [...data[0]];
-		}
-
-		got[i]++;
-		console.log(collectedData[i], got[i]);
+		console.log(data);
 	});
 }
 
-
 function initApp() {
-	getData('demo2','speechInput', 0);
-	getData('demo1','speechInput', 1);
-}
-
-// // testverhaal to analyse
-// function test() {
-// 	db.collection("words").doc("story")
-//     .onSnapshot((doc) => {
-//       console.log(doc.data().blob);
-//     });
-// }
-
-function sortByLength (array) {
-	return array.sort((y,x) => x.length - y.length);
-}
-
-function process(text) {
-	// let textToProcess = text;
-	// if (typeof text === Array) {
-	// 	textToProcess = text.join();
-	// }
-  tfidf = new TFIDF();
-
-  // Process this data into the tfidf object
-  tfidf.termFreq(text);
-	tfidf.finish(0);
-  tfidf.sortByScore();
-	
-	// tfidf.docFreq(text);
-
-	var allKeys = tfidf.getKeys();
-	const filteredResult = allKeys.filter(word => (allStupid.indexOf(word) === -1));
-	// const result = sortByLength(filteredResult); // .slice(0, 3)
-	
-	return filteredResult;
+	cleanData();
+	getData('demo2','speechInput');
 }
