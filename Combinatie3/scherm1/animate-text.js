@@ -1,9 +1,9 @@
 function tube(dom, arr, i) {
 	let letters = [];
-	// console.log(calculatedWordsArray); 
+	console.log(arr.length, word[i]); 
 	if (arr.length === word[i]) { 
-		if (dom.textContent.length < 90) { dom.prepend("\u00A0");  }
-		
+		// if (dom.textContent.length < 200) { dom.prepend("\u00A0");  }
+		dom.prepend("\u00A0");
 		return;
 	} 
 
@@ -11,11 +11,6 @@ function tube(dom, arr, i) {
 
 	letters = arr[word[i]].split('');
 	letters.reverse();
-
-	if(dom.textContent.length > 50) {  // 43 fit in tube
-		//? if prepend last character should be removed & also letters.reverse() should be there
-		dom.textContent = dom.textContent.substring(0, dom.textContent.length-1);
-	}
 
 	if (count[i] < letters.length) {
 		dom.prepend(letters[count[i]]);
@@ -26,8 +21,38 @@ function tube(dom, arr, i) {
 	}
 	count[i]++;
 
-	if(dom.textContent.length > 43) {  // 43 fit in tube, 
-		//? if append first item should be removed
-		// textContent.textContent = textContent.textContent.substr(1);
-	}
+	// console.log(dom.textContent.length);
+	// if(dom.innerHTML.length > 20) {  // 43 fit in tube
+	// 	dom.textContent = textContent.textContent.substring(0, textContent.textContent.length-1);
+	// }
+
+	animateColor(dom);
+}
+
+let lastEmotion;
+
+function animateColor(dom) {
+
+	let textTocheck = dom.textContent.split(" ");
+	// emotions.forEach(name => {
+		
+	// });
+
+	Object.keys(emotions).forEach((key) => {
+    emotions[key].forEach(word => {
+			if (textTocheck.indexOf(word) > -1) {
+				console.log(key, word);
+				dom.parentElement.parentElement.parentElement.classList = key;
+				// dom.parentElement.parentElement.parentElement.classList.add(key);
+			}
+		});
+	});
+
+	// if (dom.textContent.split(" ").indexOf('blij') > -1) {
+	// 	if (lastEmotion != 'blij') {
+	// 		dom.parentElement.parentElement.parentElement.classList.remove('sad');
+	// 		dom.parentElement.parentElement.parentElement.classList.add('happy');
+	// 		lastEmotion = 'happy';
+	// 	}
+	// }
 }

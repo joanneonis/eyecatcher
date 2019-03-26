@@ -23,7 +23,7 @@ let timeIndex = 0;
 let calculatedWordsArray = [];
 
 const dictate = () => {
-  recognition.continuous = false;
+  recognition.continuous = true;
   recognition.interimResults = false;  //? supercool
   recognition.start();
 
@@ -48,6 +48,7 @@ function recognitionEvents(recognition) {
   }
   recognition.onend = function() {
     console.log('Speech recognition service disconnected');
+    dictate();
   }
   recognition.onspeechend = function(e) { 
     console.log('onspeechend', e); 
