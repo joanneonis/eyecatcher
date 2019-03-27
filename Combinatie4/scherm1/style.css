@@ -1,21 +1,37 @@
 body, html {
 	margin: 0;
 }
-.graphic {
-	height: 200vh;
+/* .viewport {
+	height: 100vmin;
 	width: 100%;
+	overflow: hidden;
+} */
+.graphic {
+	height: 50vh;
+	/* width: 100%; */
 }
 svg {
 	width: auto;
-	height: 200vh;
+	height: 50vh;
 }
-.happy path.st2 {
-	stroke: #79ff8f;
-}
-.sad path.st2 {
-	stroke: #FF8A8A;
-}
-
 .st2 {
 	transition: stroke 1s ease;
+}
+.excitement path.st2 {
+  stroke: #F15A5A;
+}
+.safety path.st2 {
+	stroke: #FF9443;
+}
+.optimism path.st2 {
+	stroke: #F0C419;
+}
+.peacefull path.st2 {
+	stroke: #4EBA6F;
+}
+.trust path.st2 {
+	stroke: #39B2E3;
+}
+.creative path.st2 {
+	stroke: #955BA5;
 }

@@ -23,6 +23,7 @@ let timeIndex = 0;
 let calculatedWordsArray = [];
 
 const dictate = () => {
+  console.log("sdf");
   recognition.continuous = true;
   recognition.interimResults = false;  //? supercool
   recognition.start();
@@ -45,6 +46,7 @@ const dictate = () => {
 let sessionId = 0;
 
 function pushHistoryfb(e) {
+  showOnScreen(e);
   let name = sessionId.toString();
   db
   .collection("demo2")
@@ -52,8 +54,13 @@ function pushHistoryfb(e) {
   .update({ [name] : e})
     .then(function () {
       sessionId ++;
+      console.log("send");
     }).catch((error) => {
       console.log('oh nee!', error);
     });
 }
 
+function showOnScreen(e) {
+  console.log("sending...", e);
+  history.append(e);
+}
