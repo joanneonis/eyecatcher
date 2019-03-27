@@ -27,7 +27,10 @@ const dictate = () => {
   recognition.interimResults = false;  //? supercool
   recognition.start();
 
+  console.log("started", recognition);
+
   recognition.onresult = (event) => {
+    console.log("result", event);
     let currentPos = event.results.length - 1;
     const speechToText = event.results[currentPos][0].transcript;
     pushHistoryfb(process(speechToText));
@@ -35,6 +38,7 @@ const dictate = () => {
 
   // restart hack
   recognition.onend = function() {
+    console.log("restart");
     dictate();
   }
 
@@ -48,7 +52,7 @@ function pushHistoryfb(e) {
   showOnScreen(e);
   let name = sessionId.toString();
   db
-  .collection("demo2")
+  .collection("demo3")
   .doc("speechInput")
   .update({ [name] : e})
     .then(function () {
