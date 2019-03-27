@@ -71,3 +71,10 @@ const showOnScreen = (text) => {
   node.prepend(textnode);
   history.prepend(node);
 };
+
+document.querySelector('.resetAll').addEventListener('click', () => {
+	setAppState(false);
+	resetPos();
+  cleanData();
+  sessionId = 0;
+});
