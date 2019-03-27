@@ -10,7 +10,7 @@ function recognitionEvents(recognition) {
   }
   recognition.onend = function() {
     console.log('Speech recognition service disconnected');
-    dictate();
+    // dictate();
   }
   recognition.onspeechend = function(e) { 
     console.log('onspeechend', e); 

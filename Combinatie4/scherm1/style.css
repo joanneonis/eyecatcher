@@ -12,26 +12,27 @@ body, html {
 }
 svg {
 	width: auto;
-	height: 50vh;
+	height: 100vh;
+	/* transform: rotate(90deg); */
 }
 .st2 {
 	transition: stroke 1s ease;
 }
-.excitement path.st2 {
+.excitement .st2 {
   stroke: #F15A5A;
 }
-.safety path.st2 {
+.safety .st2 {
 	stroke: #FF9443;
 }
-.optimism path.st2 {
+.optimism .st2 {
 	stroke: #F0C419;
 }
-.peacefull path.st2 {
+.peacefull .st2 {
 	stroke: #4EBA6F;
 }
-.trust path.st2 {
+.trust .st2 {
 	stroke: #39B2E3;
 }
-.creative path.st2 {
+.creative .st2 {
 	stroke: #955BA5;
 }

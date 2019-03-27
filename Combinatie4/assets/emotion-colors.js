@@ -3,6 +3,6 @@ const emotions = {
 	safety: ['veiligheid', 'positief', 'zeker', 'prettig', 'lief', 'lekker', 'fijn'],
 	optimism: ['blij', 'gelukkig', 'feest', 'aardig', 'spelen'],
 	peacefull: ['gezondheid', 'beter', 'betrouwbaar', 'prima', 'hoop'],
-	trust: ['vrede', 'kam', 'pauze', 'slaap', 'rust', ''],
+	trust: ['vrede', 'kam', 'pauze', 'slaap', 'rust'],
 	creative: ['liefde', 'creatief', 'fantasie', 'nieuw', 'verrassend'],
 };
