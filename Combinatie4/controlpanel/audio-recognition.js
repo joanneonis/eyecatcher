@@ -23,7 +23,6 @@ let timeIndex = 0;
 let calculatedWordsArray = [];
 
 const dictate = () => {
-  console.log("sdf");
   recognition.continuous = true;
   recognition.interimResults = false;  //? supercool
   recognition.start();
@@ -40,7 +39,7 @@ const dictate = () => {
   }
 
   // event listner loggers (in helpers file)
-  recognitionEvents(recognition);
+  // recognitionEvents(recognition);
 }
 
 let sessionId = 0;

@@ -11,7 +11,10 @@ document.addEventListener("DOMContentLoaded", () => {
 	window.setInterval(function(){
 		if (!appState) { return; }
 		tube(textContent, collectedData[0], 0);
-		tube(textContent2, collectedData[1], 1);
-		// tube(textContent2, collectedData, indexWord2, j);
+		tube(textContent, loremArray, 0);
+
+		// TODO should be this
+		// tube(textContent2, collectedData[1], 1);
+		
 	}, 200);
 });
