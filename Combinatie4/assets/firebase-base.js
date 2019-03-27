@@ -18,17 +18,6 @@ requirejs.config({
 	}
 });
 
-require([
-	'@firebase/app',
-	'@firebase/firestore'
-], function (firebase) {
-	firebase.initializeApp(config);
-	db = firebase.firestore();
-	initialized = true;
-	initApp();
-
-	cleanData();
-});
 
 function cleanData() {
 	setData('demo2', 'speechInput', [{}]);
@@ -58,18 +47,3 @@ function updateData(collection, doc, data) {
 		});
 }
 
-let collectedData = [];
-
-function getData(collection, doc) {
-	db.collection(collection).doc(doc).onSnapshot((docData) => {
-		let data = docData.data();
-		// collectedData[collection] = [...data, ...collectedData];
-
-		console.log(data);
-	});
-}
-
-function initApp() {
-	cleanData();
-	getData('demo2','speechInput');
-}

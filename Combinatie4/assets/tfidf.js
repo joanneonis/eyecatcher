@@ -2,6 +2,8 @@
 // Daniel Shiffman
 // http://shiffman.net/a2z
 // https://github.com/shiffman/A2Z-F17
+//
+//! edited version
 
 // Some utility functions
 function tokenize(text) {
@@ -34,31 +36,6 @@ class TFIDF {
       }
     }
   }
-
-  // Get the document frequencies across all documents
-  // docFreq(data) {
-  //   var tokens = tokenize(data);
-
-  //   // A temporary dictionary of words in this document
-  //   var tempDict = {};
-  //   // For every token
-  //   for (var i = 0; i < tokens.length; i++) {
-  //     // Lowercase everything to ignore case
-  //     var token = tokens[i].toLowerCase();
-  //     // Simpler we just need to see if it exists or not
-  //     if (validate(token) && tempDict[token] === undefined) {
-  //       tempDict[token] = true;
-  //     }
-  //   }
-
-  //   for (var i = 0; i < this.keys.length; i++) {
-  //     var key = this.keys[i];
-  //     // Does this word exist in this document?
-  //     if (tempDict[key]) {
-  //       this.dict[key].docCount++;
-  //     }
-  //   }
-  // }
 
   // Get all the keys
   getKeys() {
@@ -118,5 +95,4 @@ class TFIDF {
       return (tfidf.getScore(b) - tfidf.getScore(a));
     });
   }
-
 }

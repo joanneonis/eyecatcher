@@ -33,29 +33,13 @@ const dictate = () => {
     pushHistoryfb(process(speechToText));
   }
 
-  recognitionEvents(recognition);
-}
-
-function recognitionEvents(recognition) {
-  recognition.audiostart = function(e) {
-    console.log('audiostart', e);
-  }
-  recognition.boundary = function(e) {
-    console.log('boundary', e);
-  }
-  recognition.mark = function(mark) {
-    console.log('audiostart', e);
-  }
+  // restart hack
   recognition.onend = function() {
-    console.log('Speech recognition service disconnected');
     dictate();
   }
-  recognition.onspeechend = function(e) { 
-    console.log('onspeechend', e); 
-  }
-  recognition.onsoundend = function(e) { 
-    console.log('onsoundend', e); 
-  }
+
+  // event listner loggers (in helpers file)
+  recognitionEvents(recognition);
 }
 
 let sessionId = 0;
@@ -67,30 +51,9 @@ function pushHistoryfb(e) {
   .doc("speechInput")
   .update({ [name] : e})
     .then(function () {
-      // console.log("Document successfully written!");
       sessionId ++;
     }).catch((error) => {
       console.log('oh nee!', error);
     });
 }
 
-function sortByLength (array) {
-	return array.sort((y,x) => x.length - y.length);
-}
-
-function process(text) {
-  tfidf = new TFIDF();
-
-  // Process this data into the tfidf object
-  tfidf.termFreq(text);
-	tfidf.finish(0);
-  tfidf.sortByScore();
-	
-	// tfidf.docFreq(text);
-
-	var allKeys = tfidf.getKeys();
-	const filteredResult = allKeys.filter(word => (allStupid.indexOf(word) === -1));
-	const result = sortByLength(filteredResult); // .slice(0, 3)
-	
-	return result;
-}
