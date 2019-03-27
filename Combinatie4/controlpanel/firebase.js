@@ -13,15 +13,15 @@ require([
 	cleanData();
 });
 
-function getData(collection, doc) {
-	db.collection(collection).doc(doc).onSnapshot((docData) => {
-		let data = docData.data();
-		// collectedData[collection] = [...data, ...collectedData];
+// function getData(collection, doc) {
+// 	db.collection(collection).doc(doc).onSnapshot((docData) => {
+// 		let data = docData.data();
+// 		// collectedData[collection] = [...data, ...collectedData];
 
-		console.log(data);
-	});
-}
+// 		console.log(data);
+// 	});
+// }
 
 function initApp() {
-	getData('demo2','speechInput');
+	// getData('demo2','speechInput');
 }

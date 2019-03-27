@@ -29,7 +29,7 @@ function setData(collection, doc, data) {
 	.doc(doc)
 	.set(...data)
 		.then(function () {
-			// console.log("Document successfully written!");
+			// 
 		}).catch((error) => {
 			console.log('oh nee!', error);
 		});
@@ -41,7 +41,7 @@ function updateData(collection, doc, data) {
 	.doc(doc)
 	.update(...data)
 		.then(function () {
-			// console.log("Document successfully written!");
+			// 
 		}).catch((error) => {
 			console.log('oh nee!', error);
 		});
