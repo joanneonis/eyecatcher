@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		// console.log(collectedData[1]);
 		tube(textContent, collectedDataOne, 0);
-		tube(textContent2, collectedDataTwo, 1);
+		// tube(textContent2, collectedDataTwo, 1);
 		// tube(textContent, loremArray, 0);
 		
 		

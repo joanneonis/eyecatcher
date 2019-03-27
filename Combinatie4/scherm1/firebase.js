@@ -19,35 +19,23 @@ function getData2(collection, doc, i) {
 	db.collection(collection).doc(doc).onSnapshot((docData) => {
 		let data = docData.data();
 
-		// if (collectedData[i] != 0) {
-		// 	collectedData[i] = [...collectedData[i], ...data[got[i]]];
-		// } else {
-		// 	collectedData[i] = [...data[0]];
-		// }
-
-		// got[i]++;
-		// console.log(collectedData[i], got[i]);
-
 		if (i === 0) {
-			if (collectedDataOne) {
+			if (got[i] === 0) {
+				collectedDataOne = [...data[got[i]]];
+			} else {
 				collectedDataOne = [...collectedDataOne, ...data[got[i]]];
-			} else {
-				collectedDataOne = [...data[0]];
 			}
-
+			console.log(got[i], collectedDataOne);
 			got[i]++;
-			console.log(collectedDataOne, got[i]);
-		} else {
-			if (collectedDataTwo) {
+		}
+		if (i === 1) {
+			if (got[i] === 0) {
+				collectedDataTwo = [...data[got[i]]];
+			} else {
 				collectedDataTwo = [...collectedDataTwo, ...data[got[i]]];
-			} else {
-				collectedDataTwo = [...data[0]];
 			}
-
+			console.log(got[i], collectedDataTwo);
 			got[i]++;
-			collectedDataOne.reverse();
-			collectedDataTwo.reverse();
-			console.log("Got new input", collectedDataTwo[got[i]], collectedDataOne[got[i]]);
 		}
 	});
 }
