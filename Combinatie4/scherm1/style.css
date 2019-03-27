@@ -13,6 +13,7 @@ body, html {
 svg {
 	width: auto;
 	height: 50vh;
+	transform: rotate(90deg);
 }
 .st2 {
 	transition: stroke 1s ease;
