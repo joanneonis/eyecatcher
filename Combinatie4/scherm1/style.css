@@ -15,3 +15,7 @@ svg {
 .sad path.st2 {
 	stroke: #FF8A8A;
 }
+
+.st2 {
+	transition: stroke 1s ease;
+}
