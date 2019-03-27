@@ -9,6 +9,7 @@ let container = document.querySelector('.text-box');
 let history = document.querySelector('.all-text');
 
 startBtn.addEventListener('click', () => {
+  console.log("click");
   dictate();
 });
 //!end testcode
@@ -24,13 +25,18 @@ let calculatedWordsArray = [];
 
 const dictate = () => {
   recognition.continuous = true;
-  recognition.interimResults = false;  //? supercool
+  recognition.interimResults = true;  //? supercool
   recognition.start();
+
+ 
 
   recognition.onresult = (event) => {
     let currentPos = event.results.length - 1;
     const speechToText = event.results[currentPos][0].transcript;
     pushHistoryfb(process(speechToText));
+
+    console.log("hoi", event.results[currentPos][0].transcript);
+    console.log("klaar?", event.results[0].isFinal);
   }
 
   // restart hack
@@ -45,6 +51,7 @@ const dictate = () => {
 let sessionId = 0;
 
 function pushHistoryfb(e) {
+  // console.log(e, "want to send");
   let name = sessionId.toString();
   db
   .collection("demo2")
