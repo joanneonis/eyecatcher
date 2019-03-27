@@ -4,27 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Speech Recognition</title>
-	<!-- <link rel="stylesheet" href="style.css"> -->
-	<style>
-		body, html {
-			margin: 0;
-		}
-		.graphic {
-			height: 200vh;
-			width: 100%;
-		}
-		svg {
-			width: auto;
-			height: 200vh;
-		}
-		.happy path.st2 {
-    	stroke: #79ff8f;
-		}
-		.sad path.st2 {
-    	stroke: #FF8A8A;
-		}
-	</style>
+  <title>Scherm 1</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
 	<div class="graphic">
@@ -59,18 +40,18 @@
 	 
 
 	</div>
-	<!-- <script src="filter-stupid.js"></script> -->
-	<!-- <script src="../controlpanel/tfidf.js"></script> -->
+	<!-- vendor -->
 	<script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
-	<script src="../controlpanel/tfidf.js"></script>
-	<script src="../controlpanel/filter-stupid.js"></script>
-	<script src="simple-fb.js"></script>
-	<script src="show-text.js"></script>
 
-	<script src="../emotions.js"></script>
-
-	<script src="../../getData/lorem-array.js"></script>
-	<script src="animate-text.js"></script>
-	<script src="scherm1.js"></script>
+	<!-- Helpers -->
+	<script src="../assets/firebase-base.js"></script>
+	<script src="../assets/tfidf.js"></script>
+	<script src="../assets/stupid-words.js"></script>
+	<script src="../assets/emotion-colors.js"></script>
+	
+	<!-- specific -->
+	<script src="firebase.js"></script>
+	<script src="animate-helpers.js"></script>
+	<script src="animation-interval.js"></script>
 </body>
 </html>

@@ -1,0 +1,17 @@
+body, html {
+	margin: 0;
+}
+.graphic {
+	height: 200vh;
+	width: 100%;
+}
+svg {
+	width: auto;
+	height: 200vh;
+}
+.happy path.st2 {
+	stroke: #79ff8f;
+}
+.sad path.st2 {
+	stroke: #FF8A8A;
+}

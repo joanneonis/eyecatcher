@@ -41,18 +41,10 @@ function animateColor(dom) {
 	Object.keys(emotions).forEach((key) => {
     emotions[key].forEach(word => {
 			if (textTocheck.indexOf(word) > -1) {
-				console.log(key, word);
+				// console.log(key, word);
 				dom.parentElement.parentElement.parentElement.classList = key;
 				// dom.parentElement.parentElement.parentElement.classList.add(key);
 			}
 		});
 	});
-
-	// if (dom.textContent.split(" ").indexOf('blij') > -1) {
-	// 	if (lastEmotion != 'blij') {
-	// 		dom.parentElement.parentElement.parentElement.classList.remove('sad');
-	// 		dom.parentElement.parentElement.parentElement.classList.add('happy');
-	// 		lastEmotion = 'happy';
-	// 	}
-	// }
 }
