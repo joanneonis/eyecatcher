@@ -4,7 +4,7 @@ const synth = window.speechSynthesis;
 const recognition = new SpeechRecognition();
 
 // !testcode
-const startBtn = document.querySelector('.btn')
+const startBtn = document.querySelector('.btn');
 let container = document.querySelector('.text-box');
 let history = document.querySelector('.all-text');
 

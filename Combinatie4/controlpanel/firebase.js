@@ -9,19 +9,35 @@ require([
 	db = firebase.firestore();
 	initialized = true;
 	initApp();
-
-	cleanData();
 });
 
-// function getData(collection, doc) {
-// 	db.collection(collection).doc(doc).onSnapshot((docData) => {
-// 		let data = docData.data();
-// 		// collectedData[collection] = [...data, ...collectedData];
+let appState = false;
 
-// 		console.log(data);
-// 	});
-// }
+function getAppState() {
+	db.collection('appSettings').doc('state').onSnapshot((docData) => {
+		appState = docData.data().running;
+		document.querySelector('.appstate').textContent = appState.toString();
+	});
+}
+document.querySelector('.toggleappstate').addEventListener('click', () => {
+	appState = !appState;
+  setAppState(appState);
+});
+
+
+function cleanData() {
+	setData('demo3', 'speechInput', [{0: ['hoi', 'test']}]);
+}
+
+function setAppState(e) {
+	setData('appSettings', 'state', [{running: e}]);
+}
 
 function initApp() {
 	// getData('3','speechInput');
+
+	cleanData();
+
+	setAppState(false);
+	getAppState();
 }

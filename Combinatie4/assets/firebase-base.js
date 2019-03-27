@@ -18,11 +18,6 @@ requirejs.config({
 	}
 });
 
-
-function cleanData() {
-	setData('demo3', 'speechInput', [{0: ['hoi', 'test']}]);
-}
-
 function setData(collection, doc, data) {
 	db
 	.collection(collection)
