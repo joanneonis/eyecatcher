@@ -20,7 +20,7 @@ requirejs.config({
 
 
 function cleanData() {
-	setData('demo2', 'speechInput', [{}]);
+	setData('demo3', 'speechInput', [{}]);
 }
 
 function setData(collection, doc, data) {

@@ -1,5 +1,5 @@
 
-let collectedData = [];
+// let collectedData = [];
 
 require([
 	'@firebase/app',
@@ -23,5 +23,5 @@ require([
 // }
 
 function initApp() {
-	// getData('demo2','speechInput');
+	// getData('3','speechInput');
 }

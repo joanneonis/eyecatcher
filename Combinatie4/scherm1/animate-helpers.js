@@ -1,6 +1,6 @@
 function tube(dom, arr, i) {
 	let letters = [];
-	console.log(arr.length, word[i]); 
+	// console.log(arr.length, word[i]); 
 	if (arr.length === word[i]) { 
 		// if (dom.textContent.length < 200) { dom.prepend("\u00A0");  }
 		dom.prepend("\u00A0");
@@ -9,6 +9,7 @@ function tube(dom, arr, i) {
 
 	if (arr === 0) { return }
 
+	
 	letters = arr[word[i]].split('');
 	letters.reverse();
 
