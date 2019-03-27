@@ -14,7 +14,7 @@ require([
 let appState = false;
 
 function cleanData() {
-	setData('demo3', 'speechInput', [{0: ['hoi', 'test']}]);
+	setData('demo3', 'speechInput', [{}]);
 }
 function resetPos() {
 	setData('appSettings', 'screenSettings', [{pos: 0, pos1: 0}]);
