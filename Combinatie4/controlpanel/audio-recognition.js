@@ -23,7 +23,7 @@ let timeIndex = 0;
 let calculatedWordsArray = [];
 
 const dictate = () => {
-  recognition.continuous = true;
+  recognition.continuous = false;
   recognition.interimResults = false;  //? supercool
   recognition.start();
 
@@ -36,7 +36,7 @@ const dictate = () => {
     pushHistoryfb(process(speechToText));
   }
 
-  // restart hack
+  // !!restart hack
   recognition.onend = function() {
     console.log("restart");
     dictate();
@@ -63,7 +63,11 @@ function pushHistoryfb(e) {
     });
 }
 
-function showOnScreen(e) {
-  console.log("sending...", e);
-  history.append(e);
-}
+const showOnScreen = (text) => {
+  console.log("sending...", text);
+
+  var node = document.createElement("LI");
+  var textnode = document.createTextNode(text);
+  node.prepend(textnode);
+  history.prepend(node);
+};
