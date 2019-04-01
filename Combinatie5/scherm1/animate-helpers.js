@@ -43,17 +43,22 @@ function animateColor(dom) {
 	textTocheck = textTocheck.map((el) => {
 		return el.replace(/\s/g,'')
 	});
-	
-	
-	console.log("emotie", textTocheck);
 
 	Object.keys(emotions).forEach((key) => {
     emotions[key].forEach(word => {
 			if (textTocheck.indexOf(word) > -1) {
+				console.log("emotie", key, "woord", word);
+
+				updateEmotion(word, key);
+
 				// console.log(key, word);
 				dom.parentElement.parentElement.parentElement.classList = key;
 				// dom.parentElement.parentElement.parentElement.classList.add(key);
 			}
 		});
 	});
+}
+
+function updateEmotion(word, key) {
+	updateData('appSettings', 'emotie', [{theWord: word, theKey: key}]);
 }
