@@ -10,10 +10,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	window.setInterval(function(){
 		if (!appState) { return; }
-
+		
+		let col1 = collectedDataOne.filter((word, i) => (i %2 === 0));
+		let col2 = collectedDataOne.filter((word, i) => (i %2 != 0));
+		
+		
 		// console.log(collectedData[1]);
-		tube(textContent, collectedDataOne, 0);
-		// tube(textContent2, collectedDataTwo, 1);
+		tube(textContent, col1, 0);
+		tube(textContent2, col2, 1);
 		// tube(textContent, loremArray, 0);
 		
 		

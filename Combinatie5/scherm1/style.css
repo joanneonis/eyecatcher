@@ -1,0 +1,57 @@
+body, html {
+	margin: 0;
+}
+/* .viewport {
+	height: 100vmin;
+	width: 100%;
+	overflow: hidden;
+} */
+.graphic {
+	height: 50vh;
+	/* width: 100%; */
+}
+svg {
+	width: auto;
+	height: 100vh;
+	/* transform: rotate(90deg); */
+}
+.st2 {
+	transition: stroke 1s ease;
+}
+/* .excitement .st2 {
+  stroke: #F15A5A;
+}
+.safety .st2 {
+	stroke: #FF9443;
+}
+.optimism .st2 {
+	stroke: #F0C419;
+}
+.peacefull .st2 {
+	stroke: #4EBA6F;
+}
+.trust .st2 {
+	stroke: #39B2E3;
+}
+.creative .st2 {
+	stroke: #955BA5;
+} */
+
+.excitement .st2 {
+  stroke: #e20000;
+}
+.safety .st2 {
+	stroke: #ff3c00;
+}
+.optimism .st2 {
+	stroke: #ffe003;
+}
+.peacefull .st2 {
+	stroke: #62e81c;
+}
+.trust .st2 {
+	stroke: #14b2ff;
+}
+.creative .st2 {
+	stroke: #bf007f;
+}
