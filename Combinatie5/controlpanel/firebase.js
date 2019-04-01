@@ -23,10 +23,28 @@ function setAppState(e) {
 	setData('appSettings', 'state', [{running: e}]);
 }
 
+let theWord;
+let theKey;
+
 function getAppState() {
 	db.collection('appSettings').doc('state').onSnapshot((docData) => {
 		appState = docData.data().running;
 		document.querySelector('.appstate').textContent = appState.toString();
+		document.querySelector('.appstate').classList = `appstate ${appState}`;
+	});
+
+	db.collection('appSettings').doc('emotie').onSnapshot((docData) => {
+		theKey = docData.data().theKey;
+		theWord = docData.data().theWord;
+		document.querySelector('.tubes__emotion').classList = `tubes__emotion ${theKey}`;
+		document.querySelector('#theKey').textContent = theKey.toString();
+		document.querySelector('#theWord').textContent = theWord.toString();
+	});
+}
+
+function getInput() {
+	db.collection('demo3').doc('speechInput').onSnapshot((docData) => {
+		console.log('from demo', docData.data());
 	});
 }
 
@@ -42,4 +60,5 @@ function initApp() {
 
 	setAppState(false);
 	getAppState();
+	getInput();
 }

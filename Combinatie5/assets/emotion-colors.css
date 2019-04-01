@@ -1,0 +1,30 @@
+.excitement .st2,
+.tubes__emotion.excitement {
+	stroke: #e20000;
+	background-color: #e20000;
+}
+.safety .st2,
+.tubes__emotion.safety {
+	stroke: #ff3c00;
+	background-color: #ff3c00;
+}
+.optimism .st2,
+.tubes__emotion.optimism {
+	stroke: #ffe003;
+	background-color: #ffe003;
+}
+.peacefull .st2,
+.tubes__emotion.peacefull {
+	stroke: #62e81c;
+	background-color: #62e81c;
+}
+.trust .st2,
+.tubes__emotion.trust {
+	stroke: #14b2ff;
+	background-color: #14b2ff;
+}
+.creative .st2,
+.tubes__emotion.creative {
+	stroke: #bf007f;
+	background-color: #bf007f;
+}

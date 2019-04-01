@@ -60,5 +60,5 @@ function animateColor(dom) {
 }
 
 function updateEmotion(word, key) {
-	updateData('appSettings', 'emotie', [{theWord: word, theKey: key}]);
+	setData('appSettings', 'emotie', [{theWord: word, theKey: key}]);
 }
