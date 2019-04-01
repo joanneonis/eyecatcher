@@ -41,11 +41,11 @@ function animateColor(dom) {
 
 	
 	textTocheck.map((el) => {
-		return el.trim();
+		return el.replace(/\s/g,'')
 	});
 	
 	console.log("emotie", textTocheck);
-	
+
 	Object.keys(emotions).forEach((key) => {
     emotions[key].forEach(word => {
 			if (textTocheck.indexOf(word) > -1) {
