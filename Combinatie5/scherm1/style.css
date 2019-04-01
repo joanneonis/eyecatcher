@@ -18,7 +18,7 @@ svg {
 .st2 {
 	transition: stroke 1s ease;
 }
-.excitement .st2 {
+/* .excitement .st2 {
   stroke: #F15A5A;
 }
 .safety .st2 {
@@ -35,4 +35,23 @@ svg {
 }
 .creative .st2 {
 	stroke: #955BA5;
+} */
+
+.excitement .st2 {
+  stroke: #e20000;
+}
+.safety .st2 {
+	stroke: #ff3c00;
+}
+.optimism .st2 {
+	stroke: #ffe003;
+}
+.peacefull .st2 {
+	stroke: #62e81c;
+}
+.trust .st2 {
+	stroke: #14b2ff;
+}
+.creative .st2 {
+	stroke: #bf007f;
 }

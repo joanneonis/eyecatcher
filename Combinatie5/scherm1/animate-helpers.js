@@ -34,11 +34,18 @@ let lastEmotion;
 
 function animateColor(dom) {
 
-	let textTocheck = dom.textContent.split(" ");
+	let textTocheck = dom.textContent.split(' ');
 	// emotions.forEach(name => {
 		
 	// });
 
+	
+	textTocheck.map((el) => {
+		return el.trim();
+	});
+	
+	console.log("emotie", textTocheck);
+	
 	Object.keys(emotions).forEach((key) => {
     emotions[key].forEach(word => {
 			if (textTocheck.indexOf(word) > -1) {

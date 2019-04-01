@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
 		let col2 = collectedDataOne.filter((word, i) => (i %2 != 0));
 		
 		
-
 		// console.log(collectedData[1]);
 		tube(textContent, col1, 0);
 		tube(textContent2, col2, 1);
