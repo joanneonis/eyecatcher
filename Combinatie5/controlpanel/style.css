@@ -11,27 +11,92 @@ body, html {
   flex-wrap: wrap;
 }
 
-.all-text {
+section {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
   padding: 20px;
-  list-style: none;
-  height: 50vh;
+  width: 100%;
+  align-items: flex-start;
+}
+
+section > div {
+  padding: 40px;
+  width: calc(50% - 20px);
+  background: #ececec;
+  margin-bottom: 40px;
+}
+
+@media only screen and (max-width: 800px) {
+  section > div {
+    width: 100%;
+  }
+}
+
+button {
+  -webkit-appearance: none;
+  border: navajowhite;
+  padding: 10px 15px;
+  font-size: 1em;
+  border-radius: 50px;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+ul.all-text {
+  background: white;
+  height: 270px;
+  overflow-x: hidden;
   overflow-y: scroll;
+  padding: 0;
+  list-style: none;
 }
 
-.btn {
-  padding: 13px 20px;
-  font-size: 19px;
+ul.all-text li {
+  padding: 10px;
+  color: #545454;
+  font-family: monospace;
 }
 
-.highlight {
-  background-color: yellow;
+ul.all-text li:nth-child(odd) {
+  background: #fbfbfb;
 }
 
-span {
-  display: block;
+.tubes__emotion {
+    margin: 40px -40px -40px -40px;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
 }
 
-ul.all-text div {
-  margin: 3px 0;
-  border: 1px solid #f00;
+.tubes__emotion > div {
+    width: calc(50% - 10px);
+    padding: 10px;
+    background: rgba(255, 255, 255, .2);
+    border-radius: 50px;
+    color: white;
+}
+
+.type-bold {
+    font-weight: bold;
+}
+
+
+.false {
+  color: red;
+}
+
+.true {
+  color: green;
+}
+
+.true, .false {
+  font-weight: bold;
+  padding: 10px 20px;
+}
+
+.info {
+  padding: 40px;
 }

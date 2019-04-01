@@ -6,9 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Speech Recognition</title>
 	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="../assets/emotion-colors.css">
 </head>
 <body>
-	<div>
+	<!-- <div>
 		<button class="toggleappstate">toggle appstate</button>
 		<span class="appstate"></span>
 		<br><br>
@@ -24,7 +25,49 @@
 
 		<br>
 		<ul class="all-text"></ul>
+	</div> -->
+
+	<div class="info">
+		<h1>Dash </h1>
+		<p>
+			Volg deze volgorde, en er kan maar weinig fout gaan. 
+			<ol>
+				<li>Open scherm 1 en 2</li>
+				<li>Refresh dit scherm of druk op reset all</li>
+				<li>Toggle buizen state, zodat het tegelijk afspeeld</li>
+				<li>Start opname</li>
+			</ol>
+		</p>
 	</div>
+	<section>
+		<div class="audio-recognition">
+			<h1>Audio recognition</h1>
+			<span class="audio-recognition__status"></span>
+			<button class="btn">Start met opnemen</button>
+			<ul class="all-text"></ul>
+		</div>
+		<div class="tubes">
+			<h1>Buizen</h1>
+			<button class="toggleappstate">toggle appstate</button>
+			<span class="tubes__status appstate"></span>
+			<div class="tubes__emotion">
+				<div class="tubes__emotion__key">
+					<span class="type-bold">Key</span>
+					<span id="theKey">asdf</span>
+				</div>
+				<div class="tubes__emotion__word">
+					<span class="type-bold">Word</span>
+					<span id="theWord">asdf</span>
+				</div>
+			</div>
+		</div>
+		<div class="firebase">
+			<h1>Firebase</h1>
+			<button class="resetAll">Reset</button>
+		</div>
+	</section>
+
+
 
 	<!-- vendor -->
 	<script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
