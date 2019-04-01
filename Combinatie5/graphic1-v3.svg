@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 2120 858" style="enable-background:new 0 0 2120 858;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#62E81C;stroke-width:111;stroke-miterlimit:10;}
+	.st1{fill:none;}
+	.st2{fill:none;stroke:#62E81C;stroke-width:110;stroke-miterlimit:10;}
+	.st3{font-family:'ArialMT';}
+	.st4{font-size:12px;}
+	.st5{font-family:'PTMono-Regular';}
+	.st6{font-size:34px;}
+</style>
+<g id="Layer_1">
+	<g id="Layer_1_1_">
+		<path id="path_bg_v2" class="st0" d="M1869.9,260h-453.7c0,0-129.6-7-129.6,127.4c0,114.4-155.8,102.7-155.8,102.7H700.1
+			c0,0-103.7-6.5-103.7-165.3c0-138.9-111.8-132.9-111.8-132.9H227"/>
+		<path id="tekstpad_x5F_1_x5F_" class="st1" d="M1869.9,260h-453.7c0,0-129.6-7-129.6,127.4c0,114.4-155.8,102.7-155.8,102.7H700.1
+			c0,0-103.7-6.5-103.7-165.3c0-138.9-111.8-132.9-111.8-132.9H227"/>
+		<text id="tekstpad">		<textPath  xlink:href="#tekstpad_x5F_1_x5F_" startOffset="3.043%">
+<tspan  class="st4" style="font-family:'MyriadPro-Regular';">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore </tspan>		</textPath>
+</text>
+		<path class="st2" d="M228.5,207.5h421c0,0,156-5,156,99s10,165,245,165s529,0,529,0s107,8,107-157"/>
+		<path id="SVGID_x5F_1_x5F_" class="st1" d="M228.5,207.5h421c0,0,156-5,156,99s10,165,245,165s529,0,529,0s107,8,107-157"/>
+		<text class="st3 st4"> </text>
+		<text transform="matrix(1 0 0 1 253.0966 207.5)" class="st3 st4"> </text>
+		<text transform="matrix(1 0 0 1 256.4305 207.5)" class="st3 st4"> </text>
+		<text class="st3 st4"> </text>
+	</g>
+	<g id="Layer_2_1_">
+		<polyline class="st2" points="400.5,669.5 835.6,669.5 1887.5,669.5 		"/>
+		<path id="SVGID_x5F_2_x5F_" class="st1" d="M400.5,669.5h1487"/>
+		<text class="st3 st4"> </text>
+		<text transform="matrix(1 0 0 1 464.5303 669.5)" class="st3 st4"> </text>
+		<text transform="matrix(1 0 0 1 467.8642 669.5)" class="st5 st6"> </text>
+		<text transform="matrix(1 0 0 1 488.2639 669.5)" class="st3 st4"> </text>
+		<text class="st3 st4"> </text>
+	</g>
+</g>
+<g id="Layer_2">
+</g>
+</svg>

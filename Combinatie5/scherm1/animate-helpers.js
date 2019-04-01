@@ -40,9 +40,10 @@ function animateColor(dom) {
 	// });
 
 	
-	textTocheck.map((el) => {
+	textTocheck = textTocheck.map((el) => {
 		return el.replace(/\s/g,'')
 	});
+	
 	
 	console.log("emotie", textTocheck);
 
