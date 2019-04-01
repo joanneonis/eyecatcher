@@ -10,3 +10,4 @@ Zet een van de onderstaande urls achter de [online omgeving](https://joanneonis.
 
 ### handy
 cmd alt J = console openen
+Demo 3 = laatste versie collectie firebase
