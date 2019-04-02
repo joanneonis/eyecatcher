@@ -22,6 +22,8 @@ let timeIndex = 0;
 
 let calculatedWordsArray = [];
 
+let sessionId = 0;
+
 const dictate = () => {
   recognition.continuous = false;
   recognition.interimResults = false;  //? supercool
@@ -45,8 +47,6 @@ const dictate = () => {
   // event listner loggers (in helpers file)
   // recognitionEvents(recognition);
 }
-
-let sessionId = 0;
 
 function pushHistoryfb(e) {
   showOnScreen(e);
@@ -77,4 +77,13 @@ document.querySelector('.resetAll').addEventListener('click', () => {
 	resetPos();
   cleanData();
   sessionId = 0;
+});
+
+document.querySelector('.toggleidleModus').addEventListener('click', () => {
+	idleModus = !idleModus;
+  setIdleMode(idleModus);
+  
+  if (!idleModus) {
+    sessionId = 0;
+  }
 });
