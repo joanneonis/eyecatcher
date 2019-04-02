@@ -10,9 +10,9 @@
 
 		if (idleMode) {
 			console.log('pushing');
-			collectedDataOne.push('datastad', 'spoorzone');
+			collectedDataOne.push('datastad', 'spoorzone', 'data', 'verbinden', 'samen');
 		} 
-		
+
 		let col1 = collectedDataOne.filter((word, i) => (i %2 === 0));
 		let col2 = collectedDataOne.filter((word, i) => (i %2 != 0));
 		

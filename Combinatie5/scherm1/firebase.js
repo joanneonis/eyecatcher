@@ -15,6 +15,7 @@ let appState = false;
 
 let idleMode;
 let prevMode;
+let resetCount;
 
 let collectedDataOne;
 
@@ -85,5 +86,9 @@ function initApp() {
 	getState('appSettings','state');
 
 	getScreenSettings();
+
+	db.collection('appSettings').doc('reset').onSnapshot((docData) => {
+		restart();
+	});
 
 }

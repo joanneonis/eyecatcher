@@ -72,11 +72,18 @@ const showOnScreen = (text) => {
   history.prepend(node);
 };
 
+function resetPosUp() {
+  resetCount ++;
+  setData('appSettings', 'reset', [{ count: resetCount }]);
+}
+
 document.querySelector('.resetAll').addEventListener('click', () => {
 	setAppState(false);
 	resetPos();
   cleanData();
   sessionId = 0;
+  resetPosUp();
+  setData('appSettings', 'state', [{running: true}]);
 });
 
 document.querySelector('.toggleidleModus').addEventListener('click', () => {
