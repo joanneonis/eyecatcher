@@ -67,7 +67,9 @@ function restart() {
 	pos = 0;
 	collectedDataOne = [];
 	setData('demo3','speechInput', [{}]);
-	
+
+	document.querySelector('#textContent').parentElement.parentElement.parentElement.classList = '';
+	document.querySelector('#textContent2').parentElement.parentElement.parentElement.classList = '';
 }
 
 function getState(collection, doc) {
