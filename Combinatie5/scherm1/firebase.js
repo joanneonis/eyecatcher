@@ -67,6 +67,7 @@ function restart() {
 	pos = 0;
 	collectedDataOne = [];
 	setData('demo3','speechInput', [{}]);
+	
 }
 
 function getState(collection, doc) {
