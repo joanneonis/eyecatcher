@@ -11,7 +11,9 @@ require([
 	initApp();
 });
 
+let resetCount;
 let appState = false;
+let idleModus = false;
 
 function cleanData() {
 	setData('demo3', 'speechInput', [{}]);
@@ -21,6 +23,10 @@ function resetPos() {
 }
 function setAppState(e) {
 	setData('appSettings', 'state', [{running: e}]);
+}
+
+function setIdleMode(e) {
+	setData('appSettings', 'idle', [{modus: e}]);
 }
 
 let theWord;
@@ -40,6 +46,13 @@ function getAppState() {
 		document.querySelector('#theKey').textContent = theKey.toString();
 		document.querySelector('#theWord').textContent = theWord.toString();
 	});
+
+	db.collection('appSettings').doc('idle').onSnapshot((docData) => {
+		idleModus = docData.data().modus;
+		document.querySelector('.idlemodus').textContent = idleModus.toString();
+		document.querySelector('.idlemodus').classList = `idlemodus ${idleModus}`;
+		document.querySelector('.toggleidleModus').classList = `toggleidleModus ${idleModus}`;
+	});
 }
 
 function getInput() {
@@ -56,9 +69,14 @@ document.querySelector('.toggleappstate').addEventListener('click', () => {
 function initApp() {
 	// getData('3','speechInput');
 
+	
 	cleanData();
-
+	setIdleMode(false);
 	setAppState(false);
 	getAppState();
 	getInput();
+
+	db.collection('appSettings').doc('reset').onSnapshot((docData) => {
+		resetCount = docData.data().count;
+	});
 }

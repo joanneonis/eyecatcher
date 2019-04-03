@@ -1,7 +1,4 @@
-let word = [0, 0];
-let count = [0, 0];
-
-document.addEventListener("DOMContentLoaded", () => {
+	document.addEventListener("DOMContentLoaded", () => {
 	const textPath = document.querySelector('#textPath');
 	const textContent = document.querySelector('#textContent');
 
@@ -10,14 +7,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	window.setInterval(function(){
 		if (!appState) { return; }
-		
+
+		if (idleMode) {
+			console.log('pushing');
+			collectedDataOne.push('datastad', 'spoorzone', 'data', 'verbinden', 'samen');
+		} 
+
 		let col1 = collectedDataOne.filter((word, i) => (i %2 === 0));
 		let col2 = collectedDataOne.filter((word, i) => (i %2 != 0));
 		
-		
-		// console.log(collectedData[1]);
+
 		tube(textContent, col1, 0);
 		tube(textContent2, col2, 1);
+		
+		// console.log(collectedData[1]);
+		
 		// tube(textContent, loremArray, 0);
 		
 		

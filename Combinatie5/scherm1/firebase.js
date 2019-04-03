@@ -10,7 +10,17 @@ require([
 
 });
 
-let pos = [0, 0];
+let pos = 0;
+let appState = false;
+
+let idleMode;
+let prevMode;
+let resetCount;
+
+let collectedDataOne;
+
+let word = [0, 0];
+let count = [0, 0];
 
 function setScreenSettings(e, i) {
 	if (i === 0) { updateData('appSettings', 'screenSettings', [{pos: e}]); }
@@ -19,43 +29,45 @@ function setScreenSettings(e, i) {
 function getScreenSettings() {
 	db.collection('appSettings').doc('screenSettings').onSnapshot((docData) => {
 		let data = docData.data();
-		console.log(data);
-		pos = [data.pos, data.pos1];
-
-		console.log("get pos", pos);
+		pos = data.pos;
 	});
 } 
 
-let collectedData = [0, 0];
-let collectedDataOne;
-let collectedDataTwo;
-
 function getData2(collection, doc, i) {
 	db.collection(collection).doc(doc).onSnapshot((docData) => {
+		if (idleMode) { return; };
 		let data = docData.data();
 
 		if (i === 0) {
-			if (pos[i] === 0) {
-				collectedDataOne = [...data[pos[i]]];
+			if (pos === 0) {
+				collectedDataOne = [...data[pos]];
 			} else {
-				collectedDataOne = [...collectedDataOne, ...data[pos[i]]];
+				collectedDataOne = [...collectedDataOne, ...data[pos]];
 			}
-			console.log(pos[i], collectedDataOne);
-			pos[i]++;
 		}
-		if (i === 1) {
-			if (pos[i] === 0) {
-				collectedDataTwo = [...data[pos[i]]];
-			} else {
-				collectedDataTwo = [...collectedDataTwo, ...data[pos[i]]];
-			}
-			console.log(pos[i], collectedDataTwo);
-			pos[i]++;
+		pos++;
+	});
+}
+
+function getidlemode() {
+	db.collection('appSettings').doc('idle').onSnapshot((docData) => {
+		prevMode = idleMode;
+		idleMode = docData.data().modus;
+
+		if (prevMode && !idleMode) {
+			console.log('replay');
+			restart();
 		}
 	});
 }
 
-let appState = false;
+function restart() {
+	word = [0, 0];
+	count = [0, 0];
+	pos = 0;
+	collectedDataOne = [];
+	setData('demo3','speechInput', [{}]);
+}
 
 function getState(collection, doc) {
 	db.collection(collection).doc(doc).onSnapshot((docData) => {
@@ -65,11 +77,18 @@ function getState(collection, doc) {
 	});
 }
 
+
 function initApp() {
+	getidlemode();
+
 	getData2('demo3','speechInput', 0);
-	getData2('demo1','speechInput', 1);
 
 	getState('appSettings','state');
 
 	getScreenSettings();
+
+	db.collection('appSettings').doc('reset').onSnapshot((docData) => {
+		restart();
+	});
+
 }
